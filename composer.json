@@ -1,5 +1,5 @@
 {
-    "name": "tinymeng/tencent-meeting",
+    "name": "tinymeng/tencent-meeting1",
     "description": "tencent meeting",
     "type": "library",
     "keywords": [
@@ -15,7 +15,8 @@
     ],
     "require": {
         "php": ">=7.0",
-        "tinymeng/tools": "^2.0"
+        "tinymeng/tools": "^2.0",
+        "tinymeng/tencent-meeting": "dev-master"
     },
     "autoload": {
         "psr-4": {
