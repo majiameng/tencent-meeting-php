@@ -11,14 +11,14 @@
  *      3、用户管理类接口中的“获取用户基本信息接口”，是在用户和公众号产生消息交互或关注后事件推送后，才能根据用户OpenID来获取用户基本信息。这个接口，包括其他微信接口，都是需要该用户（即openid）关注了公众号后，才能调用成功的。
  * 如想打通unionid的话需要将公众号绑定到同一个微信开放平台
  */
-namespace Tinymeng\Tencent\Gateways;
+namespace Tinymeng\Tencent\Meeting\Gateways;
 
-use Tinymeng\Tencent\Connector\Gateway;
-use Tinymeng\Tencent\Helper\ConstCode;
+use Tinymeng\Tencent\Meeting\Connector\Gateway;
+use Tinymeng\Tencent\Meeting\Helper\ConstCode;
 
 /**
  * Class Meeting
- * @package Tinymeng\Tencent\Gateways
+ * @package Tinymeng\Tencent\Meeting\Gateways
  * @Author: TinyMeng <666@majiameng.com>
  * @Created: 2018/11/9
  */

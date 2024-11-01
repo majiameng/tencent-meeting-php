@@ -3,13 +3,13 @@
  * 腾讯
  * @author: JiaMeng <666@majiameng.com>
  */
-namespace Tinymeng\Tencent;
+namespace Tinymeng\Tencent\Meeting;
 
-use Tinymeng\Tencent\Connector\GatewayInterface;
+use Tinymeng\Tencent\Meeting\Connector\GatewayInterface;
 /**
- * @method static \Tinymeng\Tencent\Gateways\Meeting Meeting(array $config) 腾讯会议
+ * @method static \Tinymeng\Tencent\Meeting\Gateways\Meeting Meeting(array $config) 腾讯会议
  */
-abstract class Tencent
+abstract class Meeting
 {
 
     /**

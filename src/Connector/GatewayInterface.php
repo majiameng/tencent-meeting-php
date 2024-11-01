@@ -1,5 +1,5 @@
 <?php
-namespace Tinymeng\Tencent\Connector;
+namespace Tinymeng\Tencent\Meeting\Connector;
 
 /**
  * 所有第三方登录必须支持的接口方法

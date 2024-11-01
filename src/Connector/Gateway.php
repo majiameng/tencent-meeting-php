@@ -1,8 +1,8 @@
 <?php
-namespace Tinymeng\Tencent\Connector;
+namespace Tinymeng\Tencent\Meeting\Connector;
 
-use Tinymeng\Tencent\Helper\ConstCode;
-use Tinymeng\Tencent\Helper\Str;
+use Tinymeng\Tencent\Meeting\Helper\ConstCode;
+use Tinymeng\Tencent\Meeting\Helper\Str;
 
 /**
  * 所有第三方登录必须继承的抽象类

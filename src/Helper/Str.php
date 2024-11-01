@@ -1,5 +1,5 @@
 <?php
-namespace Tinymeng\Tencent\Helper;
+namespace Tinymeng\Tencent\Meeting\Helper;
 
 class Str
 {
