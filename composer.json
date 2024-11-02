@@ -1,6 +1,6 @@
 {
     "name": "tinymeng/tencent-meeting",
-    "description": "tencent meeting",
+    "description": "tencent meeting SDK",
     "type": "library",
     "keywords": [
         "tinymeng", "tencent-meeting","tencent","php"
@@ -14,12 +14,15 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
-        "tinymeng/tools": "^2.0"
+        "php": ">=5.6.0",
+        "guzzlehttp/guzzle": "^6.3 || ^7.0"
     },
     "autoload": {
+        "classmap": [
+            "src/QcloudApi/QcloudApi.php"
+        ],
         "psr-4": {
-            "tinymeng\\Tencent\\Meeting\\": "src"
+            "TencentCloud\\": "./src/TencentCloud"
         }
     }
 }
