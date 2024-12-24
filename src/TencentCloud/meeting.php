@@ -6,7 +6,7 @@ use tinymeng\wemeet\TencentCloud\Common\Connector\Gateway;
 
 class meeting extends Gateway
 {
-    protected $baseClient = '\tinymeng\wemeet\TencentCloud\Meeting\V1\MeetingClient';
+    protected $baseClient = '\tinymeng\wemeet\TencentCloud\Meeting\v1\MeetingClient';
     protected $type = 'meeting';
 
     public function __construct()

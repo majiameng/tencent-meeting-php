@@ -3,14 +3,36 @@ use PHPUnit\Framework\TestCase;
 use tinymeng\wemeet\TencentCloud\Common\Credential;
 use tinymeng\wemeet\TencentCloud\Common\Profile\ClientProfile;
 use tinymeng\wemeet\TencentCloud\Common\Profile\HttpProfile;
-use tinymeng\wemeet\TencentCloud\Meeting\V1\MeetingClient;
-use tinymeng\wemeet\TencentCloud\Meeting\V1\Models\GetMeetingRequest;
+use tinymeng\wemeet\TencentCloud\Meeting\v1\MeetingClient;
+use tinymeng\wemeet\TencentCloud\Meeting\v1\Models\GetMeetingRequest;
 
 /**
  * IntelligentParseTest
  */
 class MainTest extends TestCase
 {
+
+    public function testGetMeeting()
+    {
+        $config = [
+            'secretId'=>'4m6jupGg5ayBzCWW1zxYGCDDnQpDTtz9',
+            'secretKey'=>'y6tc7o5dZiWoMPFspgnbLtzwLT0FXxRlzBQ1wlQ5523CZ4ye',
+            'appId'=>'27350153460',//应用ID
+        ];
+        $cred = new Credential($config['secretId'], $config['secretKey'],$config['appId']);
+
+        $client = new \GuzzleHttp\Client();
+        $meeting = new \tinymeng\wemeet\TencentCloud\Meeting\v1\Meeting($cred,$client);
+
+        $model = 'records';
+        $action = 'list';
+        $params = [
+
+        ];
+        $res = $meeting->send($model,$action,$params);
+        var_dump($res);
+    }
+
     public function testMeeting()
     {
 //        $data = \tinymeng\wemeet\Factory::meeting();

@@ -35,9 +35,9 @@ class Credential
     private $secretKey;
 
     /**
-     * @var string token
+     * @var string $appId
      */
-    private $token;
+    private $appId;
 
     /**
      * Credential constructor.
@@ -45,11 +45,11 @@ class Credential
      * @param string $secretKey  secretKey
      * @param string $token token
      */
-    public function __construct($secretId, $secretKey, $token = null)
+    public function __construct($secretId, $secretKey, $appId)
     {
         $this->secretId = $secretId;
         $this->secretKey = $secretKey;
-        $this->token = $token;
+        $this->appId = $appId;
     }
 
     /**
@@ -70,13 +70,6 @@ class Credential
         $this->secretKey = $secretKey;
     }
 
-    /**
-     * @param string $token 要设置的token
-     */
-    public function setToken($token)
-    {
-        $this->token = $token;
-    }
 
     /**
      * 获取secretId
@@ -96,12 +89,14 @@ class Credential
         return $this->secretKey;
     }
 
-    /**
-     * 获取token
-     * @return null|string token
-     */
-    public function getToken()
+    public function getAppId(): string
     {
-        return $this->token;
+        return $this->appId;
     }
+
+    public function setAppId(string $appId)
+    {
+        $this->appId = $appId;
+    }
+
 }

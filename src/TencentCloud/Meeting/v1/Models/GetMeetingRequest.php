@@ -1,5 +1,5 @@
 <?php
-namespace tinymeng\wemeet\TencentCloud\Meeting\V1\Models;
+namespace tinymeng\wemeet\TencentCloud\Meeting\v1\Models;
 
 use tinymeng\wemeet\TencentCloud\Common\AbstractModel;
 

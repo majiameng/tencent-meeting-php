@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-namespace tinymeng\wemeet\TencentCloud\Meeting\V1;
+namespace tinymeng\wemeet\TencentCloud\Meeting\v1;
 
 use tinymeng\wemeet\TencentCloud\Common\AbstractClient;
 use tinymeng\wemeet\TencentCloud\Common\Profile\ClientProfile;
 use tinymeng\wemeet\TencentCloud\Common\Credential;
-use tinymeng\wemeet\TencentCloud\Meeting\V1\Models as Models;
+use tinymeng\wemeet\TencentCloud\Meeting\v1\Models as Models;
 
 /**
  * @method Models\GetMeetingResponse GetMeeting(Models\GetMeetingRequest $req) 针对大型活动直播，通过对直播流设置延时来控制现场与观众播放画面的时间间隔，避免突发状况造成影响。
