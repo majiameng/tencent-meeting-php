@@ -27,7 +27,7 @@ class MainTest extends TestCase
         $httpProfile = new HttpProfile();
         $httpProfile->setEndpoint($config['endpoint']);
 
-        $clientProfile = new ClientProfile();
+        $clientProfile = new ClientProfile(ClientProfile::$SIGN_HMAC_SHA256);
         $clientProfile->setHttpProfile($httpProfile);
 
         $client = new MeetingClient($cred, $config['region'], $clientProfile);
