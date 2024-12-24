@@ -1,8 +1,8 @@
 <?php
 
-use Tinymeng\Tencent\Meeting\Meeting;
+use Tinymeng\Tencent\Meeting\Client;
 
 require_once "../vendor/autoload.php";
 
-$meeting = Meeting::meeting([]);
+$meeting = Client::meeting([]);
 var_dump($meeting);
