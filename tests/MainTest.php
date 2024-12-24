@@ -15,9 +15,9 @@ class MainTest extends TestCase
     public function testGetMeeting()
     {
         $config = [
-            'secretId'=>'4m6jupGg5ayBzCWW1zxYGCDDnQpDTtz9',
-            'secretKey'=>'y6tc7o5dZiWoMPFspgnbLtzwLT0FXxRlzBQ1wlQ5523CZ4ye',
-            'appId'=>'27350153460',//应用ID
+            'secretId'=>'xxx',
+            'secretKey'=>'xxx',
+            'appId'=>'xxxx',//应用ID
         ];
         $cred = new Credential($config['secretId'], $config['secretKey'],$config['appId']);
 
@@ -39,8 +39,8 @@ class MainTest extends TestCase
 //        var_dump($data);
 
         $config = [
-            'SecretId'=>'4m6jupGg5ayBzCWW1zxYGCDDnQpDTtz9',
-            'SecretKey'=>'y6tc7o5dZiWoMPFspgnbLtzwLT0FXxRlzBQ1wlQ5523CZ4ye',
+            'SecretId'=>'xxx',
+            'SecretKey'=>'xxx',
             'endpoint'=>'api.meeting.qq.com',//设置请求接入点域名
             'region'=>'',//地域参数
         ];
