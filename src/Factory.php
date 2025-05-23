@@ -1,19 +1,18 @@
 <?php
-// +----------------------------------------------------------------------
-// | HisiPHP框架[基于ThinkPHP5开发]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2016-2018 http://www.hisiphp.com
-// +----------------------------------------------------------------------
-// | HisiPHP承诺基础框架永久免费开源，您可用于学习和商用，但必须保留软件版权信息。
-// +----------------------------------------------------------------------
-// | Author: Tinymeng <666@majiameng.com>，开发者QQ群：50304283
-// +----------------------------------------------------------------------
 namespace tinymeng\wemeet;
 
-use tinymeng\wemeet\TencentCloud\Common\Connector\GatewayInterface;
+use tinymeng\wemeet\Helper\Str;
 
 /**
- * @method static \tinymeng\wemeet\TencentCloud\meeting meeting()
+ * @method static \tinymeng\wemeet\Service\Department department($config)
+ * @method static \tinymeng\wemeet\Service\Layout layout($config)
+ * @method static \tinymeng\wemeet\Service\Meeting meeting($config)
+ * @method static \tinymeng\wemeet\Service\Member member($config)
+ * @method static \tinymeng\wemeet\Service\Mra mra($config)
+ * @method static \tinymeng\wemeet\Service\Record record($config)
+ * @method static \tinymeng\wemeet\Service\Resource resource($config)
+ * @method static \tinymeng\wemeet\Service\Room room($config)
+ * @method static \tinymeng\wemeet\Service\User user($config)
  */
 abstract class Factory
 {
@@ -23,21 +22,20 @@ abstract class Factory
      * @author: JiaMeng <666@majiameng.com>
      * Updater:
      * @param $gateway
-     * @param null $config
+     * @param array $config
      * @return mixed
      * @throws \Exception
      */
-    protected static function init($gateway, $config = null)
+    protected static function init($gateway, array $config)
     {
-        $class = __NAMESPACE__ . '\\' .'TencentCloud'.'\\'.$gateway;
+        $gateway = Str::uFirst($gateway);
+        $class = __NAMESPACE__ . '\\' .'Service'.'\\'.$gateway;
         if (class_exists($class)) {
-            $app = new $class($config);
-            if ($app instanceof GatewayInterface) {
-                return $app;
-            }
-            throw new \Exception("第三方直播基类 [$gateway]");
+            $client = new Client($config);
+            $app = new $class($client);
+            return $app;
         }
-        throw new \Exception("第三方直播类 [$gateway] 不存在");
+        throw new \Exception("wemeet [$gateway] 不存在");
     }
 
 

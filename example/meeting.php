@@ -1,8 +1,21 @@
 <?php
+use tinymeng\wemeet\Factory;
 
-use Tinymeng\Tencent\Meeting\Client;
+$config = [
+    'secret_id' => 'xxx',
+    'secret_key' => 'xxx',
+    'app_id' => 'xxx',
+    'sdk_id' => 'xxx',
+    'region' => 'xxx',
+];
 
-require_once "../vendor/autoload.php";
+$meeting = Factory::meeting($config);
 
-$meeting = Client::meeting([]);
-var_dump($meeting);
+// 创建会议
+$result = $meeting->create([
+    'subject' => '测试会议',
+    // 其他参数
+]);
+
+// 查询会议
+$info = $meeting->get('meeting_id');
