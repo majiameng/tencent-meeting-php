@@ -2,6 +2,7 @@
 namespace tinymeng\wemeet;
 
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Exception\RequestException;
 use tinymeng\wemeet\Exception\ApiException;
 use tinymeng\wemeet\Helper\Sign;
 
@@ -60,6 +61,13 @@ class Client
             $response = $this->http->request($method, $uri, $options);
             $body = $response->getBody()->getContents();
             return json_decode($body, true);
+        } catch (RequestException $e) {
+            if ($e->hasResponse()) {
+                $body = $e->getResponse()->getBody()->getContents();
+                return json_decode($body, true);
+            } else {
+                throw new ApiException($e->getMessage(), $e->getCode());
+            }
         } catch (\Exception $e) {
             throw new ApiException($e->getMessage(), $e->getCode());
         }

@@ -13,3 +13,23 @@
 ```
 composer require tinymeng/tencent-meeting:dev-master -vvv
 ```
+
+
+```
+tencent-meeting-php/
+├── src/
+│   ├── Factory.php
+│   ├── Client.php
+│   ├── Service/
+│   │   ├── Meeting.php
+│   │   ├── User.php
+│   │   └── ...（按API模块拆分）
+│   ├── Exception/
+│   │   └── ApiException.php
+│   └── Utils/
+│       └── Http.php
+├── tests/
+│   └── ...（单元测试）
+├── composer.json
+└── README.md
+```
