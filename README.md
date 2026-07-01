@@ -14,3 +14,8 @@
 composer require tinymeng/tencent-meeting:dev-master -vvv
 ```
 
+已停止更新！！！！！
+
+请查看官方组件 [https://github.com/TencentCloud/wemeet-openapi-sdk-php](https://github.com/TencentCloud/wemeet-openapi-sdk-php)
+
+已停止更新！！！！！
